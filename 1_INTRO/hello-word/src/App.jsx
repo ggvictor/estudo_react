@@ -9,17 +9,13 @@ import Container from './components/Container'
 import Message from './components/message'
 import ChangeMessageState from './components/ChangeMessageState'
 
+// desafios
+import Challenge from './components/Challenge'
+import UserDetails from './components/UserDetails'
+
 // css
 import './App.css'
 import { useState } from 'react'
-
-
-
-
-
-
-
-
 
 function App() {
 
@@ -39,6 +35,7 @@ function App() {
 
   return (
     <div className='App'>
+    {/* css global */}
       <h1>Avançando em React</h1>
       {/* Imagem em public */}
       <div>
@@ -74,6 +71,14 @@ function App() {
         {/* state lift */}
         <Message msg = {message}/>
         <ChangeMessageState handleMessage = {handleMessage}/>
+        {/* Desafios */}
+        {/* css de componente */}
+        <Challenge/>
+        <UserDetails/>
+        {/* inline css */}
+        <p style={{color: "blue", padding: "25px", borderTop: "2px solid black"}}>
+          Este elemento foi estilizado de forma inline
+        </p>
       </div>
     </div>
   )
