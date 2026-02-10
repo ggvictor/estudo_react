@@ -8,6 +8,7 @@ import Fragments from './components/Fragments'
 import Container from './components/Container'
 import Message from './components/message'
 import ChangeMessageState from './components/ChangeMessageState'
+import Title from './components/Title'
 
 // desafios
 import Challenge from './components/Challenge'
@@ -17,9 +18,11 @@ import UserDetails from './components/UserDetails'
 import './App.css'
 import { useState } from 'react'
 
+
 function App() {
 
     const [userName] = useState("Maria")
+  
 
     const cars = [
       {id:1, brand: "Ferrari",color: "Amarela", newCar: true, km:0},
@@ -33,6 +36,9 @@ function App() {
       setMessage(msg);
     }
 
+
+    const n = 15
+    const redtitle = true
   return (
     <div className='App'>
     {/* css global */}
@@ -79,7 +85,14 @@ function App() {
         <p style={{color: "blue", padding: "25px", borderTop: "2px solid black"}}>
           Este elemento foi estilizado de forma inline
         </p>
+        {/* CSS inline dinâmico  */}
+        <h2 style={n < 10 ? ({color: "purple"}) : ({color:"pink"})}>CSS dinâmico</h2>
+        <h2 style={userName == "Maria" ? ({color: "green", backgroundColor:"blue"}) : null}>Teste nome</h2>
       </div>
+      {/* Classe dinãmicas */}
+      <h2 className = {redtitle ?"red-title" :"title"}>Este titulo vai ter classe dinâmica</h2>
+      {/* CSS module */}
+      <Title/>
     </div>
   )
 }
